@@ -5,6 +5,15 @@ namespace practice_objects
 
     class Program
     {
+        public string title = "ごんぎつね";
+
+        string Title()
+        {
+            string title = "こころ";
+            //隠蔽されたフィールド(ごんぎつね)にアクセスするためにはthisをつける
+            return $"{title}と{this.title}";
+        }
+
         static void Main(string[] args)
         {
             var b1 = new Book();
@@ -12,6 +21,8 @@ namespace practice_objects
             b1.author = "村上春樹";
             Console.WriteLine(b1.Show());
             b1.Show2();
+            var p = new Program();
+            Console.WriteLine(p.Title());
             //countはprivateフィールドなのでアクセス不可
             //Console.WriteLine(b1.count);
 
